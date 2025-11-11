@@ -1,0 +1,487 @@
+# Creating Different Types of Vectors
+# Numeric Vector
+num_vec <- c(1, 2, 3, 4, 5)
+print(num_vec)
+
+
+# Character Vector
+char_vec <- c("Apple", "Banana", "Cherry")
+print(char_vec)
+
+
+# Logical Vector
+log_vec <- c(TRUE, FALSE, TRUE, FALSE)
+print(log_vec)
+
+
+# Vector Operations
+# Arithmetic Operations
+vec1 <- c(2, 4, 6)
+vec2 <- c(1, 3, 5)
+
+sum_vec <- vec1 + vec2  # Element-wise addition
+prod_vec <- vec1 * vec2 # Element-wise multiplication
+
+print(sum_vec)   # Output: 3 7 11
+
+print(prod_vec)
+
+
+# Accessing Elements in a Vector
+# Create a vector
+num_vec <- c(10, 20, 30, 40, 50)
+
+# Access elements using index (1-based index)
+print(num_vec[2])  # Output: 20
+
+
+# Access multiple elements
+print(num_vec[c(1, 3, 5)])  # Output: 10 30 50
+
+
+# Access elements using a condition
+print(num_vec[num_vec > 25])  # Output: 30 40 50
+
+# Modifying a Vector
+# Modify an element
+num_vec[2] <- 100
+print(num_vec)  # Output: 10 100 30 40 50
+
+# Append new elements
+num_vec <- c(num_vec, 60, 70)
+print(num_vec)  # Output: 10 100 30 40 50 60 70
+
+
+# Vector Functions
+vec <- c(5, 10, 15, 20, 25)
+
+# Length of the vector
+print(length(vec))  # Output: 5
+
+
+print(sum(vec)) 
+
+
+# Mean (average) of elements
+print(mean(vec))  # Output: 15
+
+
+
+# Sorting a vector
+sorted_vec <- sort(vec, decreasing = TRUE)
+print(sorted_vec)  # Output: 25 20 15 10 5
+
+# Sequence and Repetition in Vectors
+# Sequence from 1 to 10
+seq_vec <- seq(1, 10, by = 2)  # Steps of 2
+print(seq_vec)  # Output: 1 3 5 7 9
+
+
+# Repeat elements
+rep_vec <- rep(c(1, 2, 3), times = 3)  # Repeat entire vector
+print(rep_vec)  # Output: 1 2 3 1 2 3 1 2 3
+
+# Creating a 3x3 matrix (filled column-wise by default)
+mat <- matrix(1:9, nrow = 3, ncol = 3)
+print(mat)
+
+
+# Filling a Matrix Row-Wise
+mat <- matrix(1:9, nrow = 3, byrow = TRUE)
+print(mat)
+
+
+
+# Naming Rows and Columns
+# Creating a matrix
+mat <- matrix(1:9, nrow = 3)
+
+# Assigning row and column names
+rownames(mat) <- c("Row1", "Row2", "Row3")
+colnames(mat) <- c("Col1", "Col2", "Col3")
+
+print(mat)
+
+
+
+# Accessing Elements in a Matrix
+# Create a 3x3 matrix
+mat <- matrix(1:9, nrow = 3)
+
+# Access element at row 2, column 3
+print(mat[2, 3])  # Output: 8
+
+# Access entire row 1
+print(mat[1, ])  # Output: 1 4 7
+
+
+# Access entire column 2
+print(mat[, 2])  # Output: 4 5 6
+
+
+# Matrix Arithmetic
+mat1 <- matrix(1:4, nrow = 2)
+mat2 <- matrix(5:8, nrow = 2)
+
+# Matrix addition
+sum_mat <- mat1 + mat2
+print(sum_mat)
+
+# Matrix multiplication (element-wise)
+prod_mat <- mat1 * mat2
+print(prod_mat)
+
+
+# Matrix multiplication (dot product)
+dot_prod_mat <- mat1 %*% mat2  # %*% for matrix multiplication
+print(dot_prod_mat)
+
+#Transpose and Inverse of a Matrix
+# Transpose of a matrix
+t_mat <- t(mat)
+print(t_mat)
+
+# Inverse of a matrix (for square matrices)
+square_mat <- matrix(c(2, 3, 1, 4), nrow = 2)
+inv_mat <- solve(square_mat)
+print(inv_mat)
+
+
+# Creating an array with dimensions (3x3x2)
+arr <- array(1:18, dim = c(3, 3, 2))
+print(arr)
+
+# Accessing Elements in an Array
+# Create a 3x3x2 array
+arr <- array(1:18, dim = c(3, 3, 2))
+
+# Access element at [2nd row, 3rd column, 1st layer]
+print(arr[2, 3, 1])  # Output: 8
+
+# Access entire 2nd row from Layer 1
+print(arr[2, , 1])
+
+# Access entire 3rd column from Layer 2
+print(arr[, 3, 2])
+
+
+#Performing Operations on Arrays
+# Creating two 3x3x2 arrays
+arr1 <- array(1:18, dim = c(3, 3, 2))
+arr2 <- array(19:36, dim = c(3, 3, 2))
+
+# Element-wise addition
+sum_arr <- arr1 + arr2
+print(sum_arr)
+
+
+# Element-wise multiplication
+prod_arr <- arr1 * arr2
+print(prod_arr)
+
+# Applying Functions to Arrays
+# Creating an array
+arr <- array(1:18, dim = c(3, 3, 2))
+
+# Sum of all elements in the array
+print(sum(arr))
+
+# Mean of all elements
+print(mean(arr))
+
+
+# Apply function to each row (margin = 1)
+apply(arr, MARGIN = 1, FUN = sum)
+
+# Apply function to each column (margin = 2)
+apply(arr, MARGIN = 2, FUN = mean)
+
+
+# Creating a simple data frame
+df <- data.frame(
+  ID = c(101, 102, 103, 104),
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Age = c(23, 25, 22, 24),
+  Score = c(89.5, 76.0, 91.2, 88.8),
+  Passed = c(TRUE, FALSE, TRUE, TRUE)
+)
+
+# Print the data frame
+print(df)
+
+# Accessing Elements in a Data Frame
+# Access a single column
+print(df$Name)  # Output: Alice Bob Charlie David
+
+
+# Access a specific row (row 2)
+print(df[2, ])  
+
+# Access a specific element (Row 3, Column "Score")
+print(df[3, "Score"])  # Output: 91.2
+
+# Access multiple columns
+print(df[, c("Name", "Score")])  
+
+# Access multiple rows
+print(df[1:2, ])  # First two rows
+
+# Add a new column 'Grade'
+df$Grade <- c("A", "B", "A+", "A-")
+print(df)
+
+# Filter students who passed
+passed_students <- df[df$Passed == TRUE, ]
+print(passed_students)
+
+# Filter students with Score > 85
+high_scorers <- df[df$Score > 85, ]
+print(high_scorers)
+
+# Sorting by Age (Ascending)
+df_sorted <- df[order(df$Age), ]
+print(df_sorted)
+
+# Sorting by Score (Descending)
+df_sorted_desc <- df[order(-df$Score), ]
+print(df_sorted_desc)
+
+# Changing a value (Changing Bob’s Score to 80)
+df$Score[df$Name == "Bob"] <- 80
+print(df)
+
+
+# Renaming column names
+colnames(df) <- c("Student_ID", "Student_Name", "Student_Age", "Exam_Score", "Passed_Exam", "Final_Grade")
+
+
+
+# Remove a column
+df$Grade <- NULL
+print(df)
+
+# Remove a row (removing row 2)
+df <- df[-2, ]
+print(df)
+
+# Get summary statistics
+summary(df)
+
+
+# Get structure of the data frame
+str(df)
+
+# Creating a list with different data types
+my_list <- list(
+  Name = "Alice",
+  Age = 25,
+  Scores = c(90, 85, 88),
+  Passed = TRUE
+)
+
+# Print the list
+print(my_list)
+
+
+# Access by index
+print(my_list[[1]])  # Output: "Alice"
+
+# Access by name
+print(my_list$Scores)  # Output: 90 85 88
+
+# Access specific elements within a list item
+print(my_list$Scores[2])  # Output: 85
+
+
+# Change an element
+my_list$Age <- 26
+print(my_list$Age)  # Output: 26
+
+# Add a new element
+my_list$Country <- "USA"
+print(my_list)
+
+
+
+# Remove an element
+my_list$Passed <- NULL
+print(my_list)
+
+# Creating a list with a matrix and a data frame
+my_complex_list <- list(
+  Numbers = c(1, 2, 3, 4),
+  Matrix = matrix(1:9, nrow = 3),
+  DataFrame = data.frame(ID = c(101, 102), Name = c("Bob", "Charlie"))
+)
+
+# Print the list
+print(my_complex_list)
+
+
+# Access elements inside the matrix
+print(my_complex_list$Matrix[2, 3])  # Access row 2, column 3
+
+
+list1 <- list(A = 1:5, B = "Hello")
+list2 <- list(C = c(TRUE, FALSE), D = matrix(1:4, nrow = 2))
+
+# Merge lists
+merged_list <- c(list1, list2)
+print(merged_list)
+
+# Convert list to data frame
+list_to_df <- data.frame(
+  Name = c("Alice", "Bob"),
+  Age = c(25, 27),
+  Score = c(89, 92)
+)
+
+print(list_to_df)
+
+
+
+
+
+
+#----------------------Exercise 1------------------
+
+
+# Create a numeric vector 'scores' with 8 random numbers between 50 and 100
+set.seed(123)  # Set seed for reproducibility
+scores <- sample(50:100, 8, replace = TRUE)
+
+# Calculate the minimum, maximum, mean, and median of 'scores'
+min_score <- min(scores)
+max_score <- max(scores)
+mean_score <- mean(scores)
+median_score <- median(scores)
+
+# Print the results
+cat("Scores:", scores, "\n")
+cat("Minimum:", min_score, "\n")
+cat("Maximum:", max_score, "\n")
+cat("Mean:", mean_score, "\n")
+cat("Median:", median_score, "\n")
+
+# Create a character vector 'cities' with names of 5 cities you like
+cities <- c("New York", "Tokyo", "Paris", "Barcelona", "Sydney")
+
+# Print the cities
+cat("Cities:", cities, "\n")
+
+
+
+
+#--------------Exercise 2------------------------------
+
+# Create a list 'student_info'
+student_info <- list(
+  name = "John Doe",        # character: name of the student
+  age = 21,                 # numeric: age of the student
+  grades = c(85, 90, 88)    # numeric vector: grades of the student
+)
+
+# Extract the 'age' from the list
+age <- student_info$age
+cat("Age:", age, "\n")
+
+# Extract the second grade from the list
+second_grade <- student_info$grades[2]
+cat("Second Grade:", second_grade, "\n")
+
+
+
+#--------------------Exercise 3--------------------------
+
+
+
+# Create a 4x4 matrix of numbers from 1 to 16
+matrix_4x4 <- matrix(1:16, nrow = 4, byrow = TRUE)
+
+# Print the matrix
+cat("Matrix:\n")
+print(matrix_4x4)
+
+# Extract the third row
+third_row <- matrix_4x4[3, ]
+cat("Third Row:", third_row, "\n")
+
+# Extract the second column
+second_column <- matrix_4x4[, 2]
+cat("Second Column:", second_column, "\n")
+
+# Calculate the sum of the diagonal elements
+diagonal_sum <- sum(diag(matrix_4x4))
+cat("Sum of Diagonal Elements:", diagonal_sum, "\n")
+
+
+#---------------------Exercise 4------------------------
+
+
+
+# Create the data frame 'students'
+students <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David"),
+  Math = c(85, 78, 92, 88),
+  English = c(90, 82, 95, 87)
+)
+
+# Display the structure of the data frame
+cat("Structure of the students data frame:\n")
+str(students)
+
+# Extract the English scores column
+english_scores <- students$English
+cat("\nEnglish Scores:", english_scores, "\n")
+
+# Add a new column 'Average' with the average of Math and English scores
+students$Average <- rowMeans(students[, c("Math", "English")])
+
+# Display the updated data frame
+cat("\nUpdated students data frame with Average scores:\n")
+print(students)
+
+
+#------------------Exercise 5-------------------------
+
+# Create a factor 'blood_group' with the given values
+blood_group <- factor(c("A", "B", "O", "AB", "A", "O"))
+
+# Display the levels of the factor
+cat("Levels of the blood_group factor:\n")
+levels(blood_group)
+
+# Count how many students belong to each blood group
+blood_group_counts <- table(blood_group)
+cat("\nCount of students in each blood group:\n")
+print(blood_group_counts)
+
+
+#--------------------Exercise 6-----------------------------------
+
+
+# Create a data frame 'class' with 5 students
+class <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", "David", "Eva"),
+  Age = c(20, 22, 21, 23, 20),
+  Gender = factor(c("Female", "Male", "Male", "Male", "Female")),
+  Scores = I(list(c(85, 90, 88), c(78, 75, 80), c(92, 95, 93), c(88, 85, 87), c(80, 78, 85)))
+)
+
+# Display the data frame
+cat("Class Data Frame:\n")
+print(class)
+
+# Calculate the average score for each student and extract the names of students with an average score > 80
+class$Average_Score <- sapply(class$Scores, function(x) mean(x))
+names_above_80 <- class$Name[class$Average_Score > 80]
+
+cat("\nNames of students with an average score greater than 80:\n")
+print(names_above_80)
+
+# Count how many male and female students are in the class
+gender_count <- table(class$Gender)
+
+cat("\nCount of Male and Female students:\n")
+print(gender_count)
+
